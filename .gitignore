@@ -1,0 +1,13 @@
+# ignore all
+*
+
+# but not these files
+!.gitignore
+!/**/
+!*.c
+!*.so
+!*.h
+!*makefile
+!*.md
+!*.cpp
+!*.hpp
