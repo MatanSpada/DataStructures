@@ -17,12 +17,6 @@ struct stack
 
 
 
-/*************exercise functions*************/
-
-
-
-/*exercise 1*/
-
 stack_t *CreateStack(size_t num_of_elements, size_t element_size)
 {
 	void *stack_array = NULL;
@@ -37,10 +31,13 @@ stack_t *CreateStack(size_t num_of_elements, size_t element_size)
 	stack_array = malloc(num_of_elements * element_size);	
 	if (NULL == stack_array)
 	{
+		free(new_stack);
+		new_stack = NULL;
+		
 		return NULL;
 	}
 
-	new_stack->size = num_of_elements;									
+	new_stack->size = num_of_elements;
 	new_stack->top_index = -1;
 	new_stack->stack_array = stack_array;
 	new_stack->element_size = element_size;
@@ -48,8 +45,6 @@ stack_t *CreateStack(size_t num_of_elements, size_t element_size)
 }
 
 
-
-/* exercise 2 */
 
 void StackPush(stack_t *stack, const void *element)
 {
@@ -62,9 +57,6 @@ void StackPush(stack_t *stack, const void *element)
 
 
 
-
-/* exercise 3 */
-
 void StackPop(stack_t *stack)
 {
 	assert(NULL != stack);
@@ -74,9 +66,6 @@ void StackPop(stack_t *stack)
 
 
 
-
-/* exercise 4 */
-
 int StackIsEmpty(const stack_t *stack)
 {
 	assert(NULL != stack);
@@ -85,9 +74,6 @@ int StackIsEmpty(const stack_t *stack)
 }
 
 
-
-
-/* exercise 5 */
 
 void StackDestroy(stack_t *stack)
 {
@@ -102,8 +88,6 @@ void StackDestroy(stack_t *stack)
 
 
 
-/* exercise 6 */
-
 void *StackPeek(const stack_t *stack)
 {
 	assert(NULL != stack);
@@ -113,9 +97,6 @@ void *StackPeek(const stack_t *stack)
 
 
 
-
-/* exercise 7 */
-
 size_t StackCapacity(const stack_t *stack)
 {
 	assert(NULL != stack);
@@ -124,9 +105,6 @@ size_t StackCapacity(const stack_t *stack)
 }
 
 
-
-
-/* exercise 8 */
 
 size_t StackSize(const stack_t *stack)
 {
