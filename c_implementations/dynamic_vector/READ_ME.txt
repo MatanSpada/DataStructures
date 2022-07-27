@@ -11,8 +11,8 @@ Introduction
 
 This folder contains 4 folders:
 include	- API file
-libs	- shared library file
-obj	- an object file
+libs	- for shared library file
+obj	- for object files
 dv	- source code and a test file
 
 
